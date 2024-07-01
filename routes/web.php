@@ -65,7 +65,7 @@ Route::get('/listeClient', [ClientController::class, 'getClient'])->name('listeC
 Route::get('/modifierClient/{id}', [ClientController::class, 'getClientId'])->name('modifierClient');
 Route::get('/supprimerClient/{id}', [ClientController::class, 'deleteClient'])->name('supprimerClient');
 Route::get('/ajouterClient', function () {
-    return view('Administrateur/client');
+    return view('Administrateur/client/client');
 })->name('ajouterClient');
 
 // personnel
@@ -76,7 +76,7 @@ Route::get('/listePersonnels', [PersonnelsController::class, 'listePersonnel'])-
 Route::get('/modifierPersonnel/{id}', [PersonnelsController::class, 'getPersonnelId'])->name('modifierPersonnel');
 Route::get('/supprimerPersonnel/{id}', [PersonnelsController::class, 'deletePersonnel'])->name('supprimerPersonnel');
 Route::get('/ajouterPersonnel', function () {
-    return view('Administrateur/ajouterPersonnel');
+    return view('Administrateur/personnels/ajouterPersonnel');
 })->name('ajouterPersonnel');
 
 // transporteur

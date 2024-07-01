@@ -28,7 +28,7 @@ class PersonnelsController
     public function getPersonnel()
     {
         $personnel = Personnels::all();
-        return view('Administrateur/listePersonnels', ['data' => $personnel]);
+        return view('Administrateur/personnels/listePersonnels', ['data' => $personnel]);
     }
 
 
@@ -66,12 +66,12 @@ class PersonnelsController
     public function getPersonnelId($id)
     {
         $personnel = Personnels::find($id);
-        return view('Administrateur/modifierPersonnel', ['personnel' => $personnel]);
+        return view('Administrateur/personnels/modifierPersonnel', ['personnel' => $personnel]);
     }
 
     public function listePersonnel()
     {
         $personnels = Personnels::all();
-        return view('Administrateur/listePersonnels', ['data' => $personnels]);
+        return view('Administrateur/personnels/listePersonnels', ['data' => $personnels]);
     }
 }

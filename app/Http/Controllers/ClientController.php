@@ -26,7 +26,7 @@ class ClientController
 
     public function getClient(){
         $client = Client::all();
-        return view('Administrateur/listeClient',['data'=>$client]);
+        return view('Administrateur/client/listeClient',['data'=>$client]);
     }
 
 
@@ -60,6 +60,6 @@ class ClientController
 
     public function getClientId($id){
         $client = Client::find($id);
-        return view('Administrateur/modifierClient', ['data'=>$client]);
+        return view('Administrateur/client/modifierClient', ['data'=>$client]);
     }
 }
