@@ -1,9 +1,5 @@
 <!doctype html>
 <html lang="en">
-
-
-<!-- Mirrored from themesbrand.com/skote/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Aug 2022 09:50:55 GMT -->
-
 <head>
 
     <meta charset="utf-8" />
@@ -25,27 +21,19 @@
 </head>
 
 <body data-sidebar="dark">
-
-    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
-
-    <!-- Begin page -->
     <div id="layout-wrapper">
 
+        <!-- Left Sidebar/Navbar Start -->
         @include('Administrateur/layout/navbar')
-
-        <!-- ========== Left Sidebar Start ========== -->
         @include('Administrateur/layout/sidebar')
-        <!-- Left Sidebar End -->
+        <!-- Left Sidebar/Navbar End -->
 
-        <!-- ============================================================== -->
         <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="main-content">
 
             <div class="page-content">
                 <div class="container-fluid">
 
-                    <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -53,8 +41,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
-
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
@@ -114,15 +100,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end row -->
-                </div> <!-- container-fluid -->
+                </div> 
             </div>
-            <!-- End Page-content -->
 
             @include('Administrateur/layout/footer')
 </body>
-
-
-<!-- Mirrored from themesbrand.com/skote/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Aug 2022 09:51:50 GMT -->
-
 </html>
