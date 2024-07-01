@@ -32,7 +32,7 @@ class EquipeController
 
     public function deleteEquipe($id)
     {
-        $equipe = Equipe::where('id_personnels', $id)->first();
+        $equipe = Equipe::where('id_personnel', $id)->first();
         $equipe->delete();
         return redirect()->route('listeEquipes')->with('message', 'Equipe a ete bien supprimé');
     }

@@ -92,7 +92,7 @@
                                                     <td style="vertical-align: middle;">{{ $item->poste }}</td>
                                                     <td style="vertical-align: middle;">{{ $item->date_obtention }}</td>
                                                     <td>
-                                                        <a href="{{ route('supprimerTransporteur', ['id' => $item->id]) }}" class="btn btn-danger">Supprimer </a>
+                                                        <a href="{{ route('supprimerEquipe', ['id' => $item->id]) }}" class="btn btn-danger">Supprimer </a>
                                                     </td>
                                                 </tr>
                                             @endforeach
