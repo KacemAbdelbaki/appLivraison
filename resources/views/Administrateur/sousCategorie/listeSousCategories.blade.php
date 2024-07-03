@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8" />
-    <title>Espace Administrateur (XCompanyName)</title>
+    <title>Espace Administrateur Rapidos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -26,15 +27,10 @@
 
     <!-- Begin page -->
     <div id="layout-wrapper">
-
-
-        <!-- ========== Navbar Start ========== -->
+        <!-- ========== Left Sidebar/Navbar Start ========== -->
         @include('Administrateur/layout/navbar')
-        <!-- Navbar End -->
-
-        <!-- ========== Left Sidebar Start ========== -->
         @include('Administrateur/layout/sidebar')
-        <!-- Left Sidebar End -->
+        <!-- Left Sidebar/Navbar End -->
 
         <!-- Start right Content here -->
         <div class="main-content">
@@ -46,7 +42,9 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18">Liste de Equipe</h4>
+                                <h4 class="mb-sm-0 font-size-18">Liste des catégories</h4>
+
+
                             </div>
                         </div>
                     </div>
@@ -58,19 +56,14 @@
                                 <div class="card-body">
 
                                     <h4 class="card-title">Vous pouvez supprimer ou modifier des informations concernant
-                                        les Equipe</h4>
+                                        les catégories</h4>
                                     <br />
                                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                         <thead>
                                             <tr>
                                                 <th>Nom</th>
-                                                <th>Prénom</th>
-                                                <th>E-mail</th>
-                                                <th>Numéro de téléphone</th>
-                                                <th>Adresse</th>
-                                                <th>Poste</th>
-                                                <th>Date obtention</th>
-                                                <th>Action</th>
+                                                <th>Nom categorie</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
 
@@ -78,16 +71,18 @@
                                         <tbody>
                                             @foreach ($data as $item)
                                                 <tr>
-                                                    <td style="vertical-align: middle;">{{ $item->nom }}</td>
-                                                    <td style="vertical-align: middle;">{{ $item->prenom }}</td>
-                                                    <td style="vertical-align: middle;">{{ $item->email }}</td>
-                                                    <td style="vertical-align: middle;">{{ $item->num_tel }}</td>
-                                                    <td style="vertical-align: middle;">{{ $item->adresse }}</td>
-                                                    <td style="vertical-align: middle;">{{ $item->poste }}</td>
-                                                    <td style="vertical-align: middle;">{{ $item->date_obtention }}
+                                                    <td style="vertical-align: middle;">
+                                                        {{ $item['nom'] }}
                                                     </td>
+
+                                                    <td style="vertical-align: middle;">
+                                                        {{ $item['categorie'] }}
+                                                    </td>
+
                                                     <td>
-                                                        <a href="{{ route('supprimerEquipe', ['id' => $item->id]) }}"
+                                                        <a href="/modifierSousCategorie/{{ $item['id'] }}"
+                                                            class="btn btn-primary">Modifier</a>
+                                                        <a href="{{ route('supprimerSousCategorie', ['id' => $item['id']]) }}"
                                                             class="btn btn-danger">Supprimer </a>
                                                     </td>
                                                 </tr>
@@ -106,10 +101,7 @@
             </div>
             <!-- End Page-content -->
 
-
-            <!-- ========== Footer Start ========== -->
             @include('Administrateur/layout/footer')
-            <!-- Footer End -->
 </body>
 
 </html>

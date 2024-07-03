@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
 
+
+<!-- Mirrored from themesbrand.com/skote/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Aug 2022 09:50:55 GMT -->
+
 <head>
 
     <meta charset="utf-8" />
@@ -66,14 +69,13 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Ajouter Nouveau Catégorie</h4>
-                                    <form action="{{ route('categorie.update') }}" method="POST"
+                                    <form action="{{ route('categorie.store') }}" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
-                                        <input type="hidden" name="id" value="{{ $data->id }}">
                                         <div class="row mb-4">
                                             <label for="nom" class="col-form-label col-lg-2">Nom de la catégorie</label>
                                             <div class="col-lg-10">
-                                                <input id="nom" name="nom" type="text" value="{{ $data->nom }}"
+                                                <input id="nom" name="nom" type="text"
                                                     class="form-control" placeholder="Entrer le nom">
                                             </div>
                                         </div>

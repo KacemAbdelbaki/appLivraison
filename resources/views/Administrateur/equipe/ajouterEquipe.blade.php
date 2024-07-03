@@ -59,7 +59,7 @@
                                     <form action="{{ route('equipe.store') }}" method="POST">
                                         @csrf
                                         <div class="row mb-4">
-                                            <label for="nom" class="col-form-label col-lg-2">Detail du transporteur</label>
+                                            <label for="nom" class="col-form-label col-lg-2">Detail de l'equipe</label>
                                             <div class="col-lg-10">
                                                 <select name="id_personnel" id="id_personnel" class="form-control">
                                                     @foreach($data as $item)
@@ -71,7 +71,7 @@
 
                                         <div class="row justify-content-end">
                                             <div class="col-lg-10">
-                                                <button type="submit" class="btn btn-primary">Créer compte personnel</button>
+                                                <button type="submit" class="btn btn-primary">Créer equipe</button>
                                             </div>
                                         </div>
                                     </form>

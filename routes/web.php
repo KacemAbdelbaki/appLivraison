@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\SousCategoriesController;
 use App\Http\Controllers\TransporteurController;
 use App\Http\Controllers\PersonnelsController;
 use App\Http\Controllers\EquipeController;
@@ -17,22 +18,6 @@ Route::get('/ajouterRestaurant', function () {
     return view('Administrateur/restaurant');
 })->name('ajouterRestaurant');
 
-
-
-Route::get('/categorie', [CategorieController::class, 'index'])->name('listeCategorie');
-Route::post('/categorie', [CategorieController::class, 'store'])->name('categorie.store');
-
-Route::post('/categorieU', [CategorieController::class, 'updateCategorie'])->name('categorie.update');
-
-Route::get('/listeCategorie', [CategorieController::class, 'getCategorie'])->name('listeCategorie');
-
-Route::get('/modifierCategorie/{id}', [CategorieController::class, 'getCategorieId'])->name('modifierCategorie');
-
-Route::get('/supprimerCategorie/{id}', [CategorieController::class, 'deleteCategorie'])->name('supprimerCategorie');
-
-Route::get('/ajouterCategorie', function () {
-    return view('Administrateur/categorie');
-})->name('ajouterCategorie');
 //////////////////////////////////////////////////////////////////////////////
 
 Route::get('/Supplement', function () {
@@ -95,3 +80,21 @@ Route::post('/equipe', [EquipeController::class, 'store'])->name('equipe.store')
 Route::get('/modifierEquipe/{id}', [EquipeController::class, 'getEquipeId'])->name('modifierEquipe');
 Route::post('/equipeU', [EquipeController::class, 'updateEquipe'])->name('equipe.update');
 Route::get('/supprimerEquipe/{id}', [EquipeController::class, 'deleteEquipe'])->name('supprimerEquipe');
+
+// categories
+Route::get('/categorie', [CategoriesController::class, 'getCategories'])->name('listeCategories');
+Route::get('/ajouterCategorie', function () {
+    return view('Administrateur/categorie/ajouterCategorie');
+})->name('ajouterCategorie');
+Route::post('/categorie', [CategoriesController::class, 'store'])->name('categorie.store');
+Route::get('/modifierCategorie/{id}', [CategoriesController::class, 'getCategorieId'])->name('modifierCategorie');
+Route::post('/categorieU', [CategoriesController::class, 'updateCategorie'])->name('categorie.update');
+Route::get('/supprimerCategorie/{id}', [CategoriesController::class, 'deleteCategorie'])->name('supprimerCategorie');
+
+// sousCategories
+Route::get('/sousCategorie', [SousCategoriesController::class, 'getSousCategories'])->name('listeSousCategories');
+Route::get('/ajouterSousCategorie', [SousCategoriesController::class, 'ajouterSousCategorie'])->name('ajouterSousCategorie');
+Route::post('/sousCategorie', [SousCategoriesController::class, 'store'])->name('sousCategorie.store');
+Route::get('/modifierSousCategorie/{id}', [SousCategoriesController::class, 'getSousCategorieId'])->name('modifierSousCategorie');
+Route::post('/sousCategorieU', [SousCategoriesController::class, 'updateSousCategorie'])->name('sousCategorie.update');
+Route::get('/supprimerSousCategorie/{id}', [SousCategoriesController::class, 'deleteSousCategorie'])->name('supprimerSousCategorie');

@@ -68,12 +68,6 @@
                         <i class="bx bx-file"></i>
                         <span key="t-utility">Utilités</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('ajouterCategorie') }}" key="t-starter-page">Ajouter catégorie plat</a>
-                        </li>
-                        <li><a href="{{ route('listeCategorie') }}" key="t-maintenance">Liste catégorie plat</a></li>
-                    </ul>
-
                 </li>
 
                 <li class="menu-title" key="t-components">Outils</li>
@@ -120,6 +114,28 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('ajouterEquipe') }}" key="t-alerts">Ajouter une equipe</a></li>
                         <li><a href="{{ route('listeEquipes') }} " key="t-buttons">Liste des equipes</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-file" style='font-size:14px'></i>
+                        <span key="t-ui-elements">Categories</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('ajouterCategorie') }}" key="t-alerts">Ajouter une categorie</a></li>
+                        <li><a href="{{ route('listeCategories') }} " key="t-buttons">Liste des categories</a></li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fa fa-folder-open" style='font-size:14px'></i>
+                        <span key="t-ui-elements">Sous-Categories</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('ajouterSousCategorie') }}" key="t-alerts">Ajouter une sous-categorie</a></li>
+                        <li><a href="{{ route('listeSousCategories') }} " key="t-buttons">Liste des sous-categories</a></li>
                     </ul>
                 </li>
             </ul>

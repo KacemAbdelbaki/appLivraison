@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
 
+
+<!-- Mirrored from themesbrand.com/skote/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Aug 2022 09:50:55 GMT -->
+
 <head>
 
     <meta charset="utf-8" />
@@ -65,21 +68,35 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Ajouter Nouveau Catégorie</h4>
-                                    <form action="{{ route('categorie.update') }}" method="POST"
+                                    <h4 class="card-title mb-4">Ajouter Nouveau sous-Catégorie</h4>
+                                    <form action="{{ route('sousCategorie.update') }}" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
+
                                         <input type="hidden" name="id" value="{{ $data->id }}">
+
+                                        <div class="row mb-4">
+                                            <label for="nom" class="col-form-label col-lg-2">Nom de la sous-catégorie</label>
+                                            <div class="col-lg-10">
+                                                <input id="nom" name="nom" type="text" class="form-control" value="{{ $data->nom }}"
+                                                    placeholder="Entrer le nom">
+                                            </div>
+                                        </div>
+
                                         <div class="row mb-4">
                                             <label for="nom" class="col-form-label col-lg-2">Nom de la catégorie</label>
                                             <div class="col-lg-10">
-                                                <input id="nom" name="nom" type="text" value="{{ $data->nom }}"
-                                                    class="form-control" placeholder="Entrer le nom">
+                                                <select name="id_categorie" id="id_categorie" class="form-control"> value="{{ $data->id_categorie }}"
+                                                    @foreach ($categories as $item)
+                                                        <option value={{ $item->id }}>{{ $item->nom }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
+
                                         <div class="row justify-content-end">
                                             <div class="col-lg-10">
-                                                <button type="submit" class="btn btn-primary">Créer une catégorie</button>
+                                                <button type="submit" class="btn btn-primary">Créer une sous-catégorie</button>
                                             </div>
                                         </div>
                                     </form>
